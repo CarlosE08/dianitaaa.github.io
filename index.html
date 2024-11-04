@@ -19,33 +19,35 @@
         }
         .card {
             background-color: #fff;
-            padding: 2em;
+            padding: 1.5em;
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
+            max-width: 90%;
             text-align: center;
             position: relative;
             z-index: 1;
         }
         .card h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #FF69B4;
+            margin: 0.5em 0;
         }
         .card p {
-            font-size: 1.2em;
+            font-size: 1em;
             color: #666;
-            margin: 1em 0;
+            margin: 0.8em 0;
         }
         .card img {
-            width: 80%;
+            width: 100%;
+            max-width: 300px;
             border-radius: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .button {
             background-color: #FF69B4;
             color: #fff;
             border: none;
-            padding: 0.8em 1.5em;
+            padding: 0.7em 1.2em;
             font-size: 1em;
             border-radius: 5px;
             cursor: pointer;
@@ -64,6 +66,40 @@
             0% { opacity: 1; transform: translateY(0); }
             100% { opacity: 0; transform: translateY(-100px); }
         }
+        
+        /* Ajustes para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .card h1 {
+                font-size: 1.8em;
+            }
+            .card p {
+                font-size: 0.9em;
+            }
+            .button {
+                padding: 0.6em 1em;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 1em;
+            }
+            .card h1 {
+                font-size: 1.6em;
+            }
+            .card p {
+                font-size: 0.85em;
+            }
+            .card img {
+                width: 100%;
+                max-width: 250px;
+            }
+            .button {
+                padding: 0.5em 0.9em;
+                font-size: 0.85em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,8 +116,7 @@
         function showEmojis() {
             const emojis = ['🎉', '🎂', '🎈', '🥳', '🎊', '💖', '✨', '🎁', '❤️', '💜', '💙', '💛', '🧡', '💚'];
             
-            // Número de emojis a mostrar por clic
-            const numEmojis = 5; 
+            const numEmojis = 5;
 
             for (let i = 0; i < numEmojis; i++) {
                 const emojiElement = document.createElement('div');
